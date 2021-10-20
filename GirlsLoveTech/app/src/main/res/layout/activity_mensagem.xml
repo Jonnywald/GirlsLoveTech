@@ -8,45 +8,39 @@
     tools:context=".Mensagem">
 
     <Button
-        android:id="@+id/btn_aulas"
-        android:layout_width="wrap_content"
+        android:id="@+id/btn_share"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:text="Aulas"
-        tools:layout_editor_absoluteX="56dp"
-        tools:layout_editor_absoluteY="98dp" />
+        android:layout_marginBottom="20dp"
+        android:text="Compartilhar"
+        app:cornerRadius="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/btn_indique"
-        android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:text="Indique uma amiga"
-        tools:layout_editor_absoluteX="56dp"
-        tools:layout_editor_absoluteY="169dp" />
-
-    <Button
-        android:id="@+id/btn_registrar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Registrar"
-        tools:layout_editor_absoluteX="53dp"
-        tools:layout_editor_absoluteY="243dp" />
-
-    <Button
-        android:id="@+id/btn_loginn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Login"
-        tools:layout_editor_absoluteX="55dp"
-        tools:layout_editor_absoluteY="322dp" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:clickable="true"
+        android:layout_marginTop="40dp"
+        android:fontFamily="monospace"
+        android:gravity="center"
+        android:text="Convide uma amiga para participar gratuitamente dos nossos cursos! "
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8"
+        app:srcCompat="@drawable/code" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

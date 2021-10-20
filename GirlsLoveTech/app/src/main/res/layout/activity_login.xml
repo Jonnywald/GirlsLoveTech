@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/txt_PassLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -31,10 +31,10 @@
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_UsernameLogin" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName3"
+        android:id="@+id/txt_UsernameLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -52,7 +52,7 @@
         android:layout_marginBottom="-5dp"
         android:fontFamily="monospace"
         android:text="Username"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName3"
+        app:layout_constraintBottom_toTopOf="@+id/txt_UsernameLogin"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -63,7 +63,7 @@
         android:layout_marginBottom="-5dp"
         android:fontFamily="monospace"
         android:text="Password"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword"
+        app:layout_constraintBottom_toTopOf="@+id/txt_PassLogin"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
@@ -73,10 +73,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:backgroundTint="#2e2e2e"
+        android:onClick="btnLogin"
         android:text="Login"
         app:cornerRadius="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_PassLogin" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

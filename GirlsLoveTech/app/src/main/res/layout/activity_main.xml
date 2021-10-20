@@ -8,6 +8,18 @@
     app:circularflow_radiusInDP="10"
     tools:context=".MainActivity">
 
+    <Button
+        android:id="@+id/btn_indique"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:onClick="btnIndiqueClick"
+        android:text="Indique uma amiga"
+        app:cornerRadius="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <TextView
         android:id="@+id/txtInicio"
         android:layout_width="318dp"
@@ -15,7 +27,6 @@
         android:layout_marginStart="50dp"
         android:layout_marginTop="156dp"
         android:layout_marginEnd="50dp"
-        android:background="#FBFBFB"
         android:drawablePadding="@dimen/cardview_default_radius"
         android:shadowRadius="10"
         android:text="Oi, você quer descobrir como criar um portfólio incrível e aprender os primeiros passos para se entrar na área de tecnologia?  Confira nossos cursos!"
@@ -33,32 +44,35 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="250dp"
         android:layout_marginEnd="30dp"
-        app:circularflow_defaultRadius="10"
+        app:circularflow_defaultRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/wecan_90fab297" />
 
-    <Button
-        android:id="@+id/btnLogin"
-        android:layout_width="120dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="30dp"
-        android:text="Login"
-        app:cornerRadius="15"
+    <LinearLayout
+        android:layout_width="340dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <Button
-        android:id="@+id/btnCadastro"
-        android:layout_width="120dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="20dp"
-        android:text="Cadastro"
-        app:cornerRadius="15"
-        app:layout_constraintEnd_toStartOf="@+id/btnLogin"
-        app:layout_constraintTop_toTopOf="parent" />
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="170dp"
+            android:layout_height="50dp"
+            android:onClick="btnLoginClick"
+            android:text="Login"
+            app:cornerRadius="15dp" />
+
+        <Button
+            android:id="@+id/btnCadastro"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:onClick="btnCadastroClick"
+            android:text="Cadastro"
+            app:cornerRadius="15dp" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

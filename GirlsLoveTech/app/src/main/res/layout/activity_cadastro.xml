@@ -15,24 +15,25 @@
         android:layout_marginBottom="-5dp"
         android:fontFamily="monospace"
         android:text="Password"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword2"
+        app:layout_constraintBottom_toTopOf="@+id/txt_PassCadastro"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/btn_login2"
+        android:id="@+id/btn_cadastro"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:backgroundTint="#2e2e2e"
+        android:onClick="btnCadastroClick"
         android:text="Enviar"
         app:cornerRadius="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_PassCadastro" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/txt_UsernameCadastro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -56,7 +57,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPassword2"
+        android:id="@+id/txt_PassCadastro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -67,7 +68,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_EmailCadastro" />
 
     <TextView
         android:id="@+id/textView6"
@@ -77,11 +78,11 @@
         android:layout_marginBottom="-5dp"
         android:fontFamily="monospace"
         android:text="Username"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/txt_UsernameCadastro"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/txt_EmailCadastro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -89,7 +90,7 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_UsernameCadastro" />
 
     <TextView
         android:id="@+id/textView7"
@@ -98,6 +99,6 @@
         android:layout_marginStart="75dp"
         android:layout_marginBottom="-5dp"
         android:text="Email"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName2"
+        app:layout_constraintBottom_toTopOf="@+id/txt_EmailCadastro"
         app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

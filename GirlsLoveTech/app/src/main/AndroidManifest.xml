@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GirlsLoveTech">
         <activity
+            android:name=".Cursos"
+            android:exported="true" />
+        <activity
+            android:name=".Aulas"
+            android:exported="true" />
+        <activity
             android:name=".Cadastro"
             android:exported="true" />
         <activity
