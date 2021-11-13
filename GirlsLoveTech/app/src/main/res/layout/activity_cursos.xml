@@ -8,6 +8,7 @@
     tools:context=".Cursos">
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerCurso"
         android:layout_width="409dp"
         android:layout_height="729dp"
         tools:itemCount="10"
