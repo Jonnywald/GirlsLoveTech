@@ -11,8 +11,8 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 
-import adapters.CursoAdapters;
-import adapters.AulaAdapters;
+import Adapters.CursoAdapters;
+import Adapters.AulaAdapters;
 import models.Curso;
 import models.Aula;
 import services.ServiceApi;

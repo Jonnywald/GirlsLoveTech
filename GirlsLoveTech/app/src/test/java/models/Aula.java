@@ -5,17 +5,17 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class Aula {
+public class Aula extends Curso{
 
     private int idAula;
    private String nomeAula;
 
 
-    public Aula(int idAula, String nomeAula) {
+    public Aula(int idAula, String nomeAula, int idCurso) {
 
         this.idAula = idAula;
         this.nomeAula = nomeAula;
-
+        this.setIdCurso(idCurso);
     }
 
     public Aula (){
@@ -52,7 +52,7 @@ public class Aula {
 
     }
 
-    public static ArrayList<Aula> parseObject(String json) {
+    public static ArrayList<Aula> parseObject1(String json) {
         ArrayList<Aula> aulas = new ArrayList<>();
 
         try {
