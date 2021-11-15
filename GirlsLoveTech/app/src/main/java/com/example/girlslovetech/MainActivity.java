@@ -1,9 +1,5 @@
 package com.example.girlslovetech;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.DividerItemDecoration;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -15,7 +11,8 @@ import Adapters.CursoAdapters;
 import Adapters.AulaAdapters;
 import models.Curso;
 import models.Aula;
-import services.ServiceApi;
+import services.ServiceAPI;
+
 
 import java.util.ArrayList;
 
@@ -24,10 +21,10 @@ public class MainActivity extends AppCompatActivity {
     ProgressDialog dialog;
     ArrayList<Curso> listaCursos;
     RecyclerView recyclerCurso;
-    CursoAdapter cursoAdapter;
+    CursoAdapters cursoAdapter;
     ArrayList<Aula> listaAulas;
     RecyclerView recyclerAula;
-    AulaAdapter aulaAdapter;
+    AulaAdapters aulaAdapter;
 
 
     @Override
@@ -83,7 +80,7 @@ public class CursoAPI extends AsyncTask<String, String, String> {
 
     @Override
     protected String doInBackground(String... strings) {
-        String data = ServiceApi.getService(strings[0], metodo, strings[1]);
+        String data = ServiceAPI.getService(strings[0], metodo, strings[1]);
         return data;
 
     }
