@@ -1,11 +1,15 @@
 package com.example.girlslovetech;
 
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import Adapters.CursoAdapters;
 import Adapters.AulaAdapters;
@@ -56,10 +60,23 @@ public class MainActivity extends AppCompatActivity {
 
         // add adapter
         cursoAdapter = new CursoAdapters(listaCursos);
-        recyclerCurso.setAdapter(cursoAdapters);
+        recyclerCurso.setAdapter(cursoAdapter);
 
         //divisor entre linhas
         recyclerCurso.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
+    }
+
+    public void setupRecycleAula(){
+        //Configurando o layout manager
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        recyclerAula.setLayoutManager(layoutManager);
+
+        // add adapter
+        aulaAdapter = new AulaAdapters(listaAulas);
+        recyclerAula.setAdapter(aulaAdapter);
+
+        //divisor entre linhas
+        recyclerAula.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
     }
 
 
@@ -92,5 +109,37 @@ public class CursoAPI extends AsyncTask<String, String, String> {
         setupRecycleCurso();
         dialog.dismiss();
     }
+
 }
+    public class AulaAPI extends AsyncTask<String, String, String> {
+
+        private String metodo;
+
+        public AulaAPI(String metodo) {
+            this.metodo = metodo;
+        }
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            dialog = ProgressDialog.show(MainActivity.this, "Aguarde", "Por favor aguarde...");
+
+        }
+
+        @Override
+        protected String doInBackground(String... strings) {
+            String data = ServiceAPI.getService(strings[0], metodo, strings[1]);
+            return data;
+
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+            listaCursos = Curso.parseObject(s);
+            setupRecycleAula();
+            dialog.dismiss();
+        }
+    }
+
 }

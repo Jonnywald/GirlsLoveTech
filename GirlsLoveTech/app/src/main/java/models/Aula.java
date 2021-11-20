@@ -44,7 +44,7 @@ public class Aula extends Curso{
     public static String parseJson(Aula aula) {
         JSONObject jsonObject = new JSONObject();
         try {
-            jsonObject.put("Nome", aula.getNomeAula());
+            jsonObject.put("lesson", aula.getNomeAula());
             return jsonObject.toString();
         } catch (Exception ex) {
             return "";
@@ -60,8 +60,8 @@ public class Aula extends Curso{
             for (int i = 0; i < array.length(); i++) {
                 Aula aula = new Aula();
                 JSONObject obj = array.getJSONObject(i);
-                aula.setNomeAula(obj.getString("nomeAula"));
-                aula.setIdAula(obj.getInt("idAula"));
+                aula.setNomeAula(obj.getString("lesson"));
+                aula.setIdAula(obj.getInt("idLesson"));
                 aulas.add(aula);
             }
 

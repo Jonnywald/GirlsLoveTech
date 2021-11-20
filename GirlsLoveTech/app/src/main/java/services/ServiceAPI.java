@@ -16,7 +16,7 @@ import javax.net.ssl.HttpsURLConnection;
 public class ServiceAPI {
 
 
-    private static String url ="https://616f41f0715a630017b39bd6.mockapi.io/api/v1/:";
+    private static String url = "https://api-girlslovetech.herokuapp.com/";
 
     public static String getService(String dataset, String method, String data){
         String reqUrl = url + dataset;
