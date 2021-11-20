@@ -22,10 +22,10 @@
 
     <TextView
         android:id="@+id/txtInicio"
-        android:layout_width="318dp"
-        android:layout_height="389dp"
+        android:layout_width="303dp"
+        android:layout_height="82dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="156dp"
+        android:layout_marginTop="160dp"
         android:layout_marginEnd="50dp"
         android:drawablePadding="@dimen/cardview_default_radius"
         android:shadowRadius="10"
@@ -33,7 +33,7 @@
         android:textStyle="bold"
         app:drawableTint="#F3B6B6"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -42,7 +42,7 @@
         android:layout_width="276dp"
         android:layout_height="198dp"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="270dp"
         android:layout_marginEnd="30dp"
         app:circularflow_defaultRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -53,7 +53,7 @@
     <LinearLayout
         android:layout_width="340dp"
         android:layout_height="61dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
