@@ -22,13 +22,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    ProgressDialog dialog;
-    ArrayList<Curso> listaCursos;
-    RecyclerView recyclerCurso;
-    CursoAdapters cursoAdapter;
-    ArrayList<Aula> listaAulas;
-    RecyclerView recyclerAula;
-    AulaAdapters aulaAdapter;
+
 
 
     @Override
@@ -53,93 +47,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void setupRecycleCurso(){
-        //Configurando o layout manager
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        recyclerCurso.setLayoutManager(layoutManager);
 
-        // add adapter
-        cursoAdapter = new CursoAdapters(listaCursos);
-        recyclerCurso.setAdapter(cursoAdapter);
-
-        //divisor entre linhas
-        recyclerCurso.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
-    }
-
-    public void setupRecycleAula(){
-        //Configurando o layout manager
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        recyclerAula.setLayoutManager(layoutManager);
-
-        // add adapter
-        aulaAdapter = new AulaAdapters(listaAulas);
-        recyclerAula.setAdapter(aulaAdapter);
-
-        //divisor entre linhas
-        recyclerAula.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
-    }
-
-
-public class CursoAPI extends AsyncTask<String, String, String> {
-
-    private String metodo;
-
-    public CursoAPI(String metodo) {
-        this.metodo = metodo;
-    }
-
-    @Override
-    protected void onPreExecute() {
-        super.onPreExecute();
-        dialog = ProgressDialog.show(MainActivity.this, "Aguarde", "Por favor aguarde...");
-
-    }
-
-    @Override
-    protected String doInBackground(String... strings) {
-        String data = ServiceAPI.getService(strings[0], metodo, strings[1]);
-        return data;
-
-    }
-
-    @Override
-    protected void onPostExecute(String s) {
-        super.onPostExecute(s);
-        listaCursos = Curso.parseObject(s);
-        setupRecycleCurso();
-        dialog.dismiss();
-    }
-
-}
-    public class AulaAPI extends AsyncTask<String, String, String> {
-
-        private String metodo;
-
-        public AulaAPI(String metodo) {
-            this.metodo = metodo;
-        }
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-            dialog = ProgressDialog.show(MainActivity.this, "Aguarde", "Por favor aguarde...");
-
-        }
-
-        @Override
-        protected String doInBackground(String... strings) {
-            String data = ServiceAPI.getService(strings[0], metodo, strings[1]);
-            return data;
-
-        }
-
-        @Override
-        protected void onPostExecute(String s) {
-            super.onPostExecute(s);
-            listaCursos = Curso.parseObject(s);
-            setupRecycleAula();
-            dialog.dismiss();
-        }
-    }
 
 }

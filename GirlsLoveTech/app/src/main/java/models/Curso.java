@@ -41,7 +41,9 @@ public class Curso {
     public static String parseJson(Curso curso) {
         JSONObject jsonObject = new JSONObject();
         try {
-            jsonObject.put("course", curso.getNomeCurso());
+            jsonObject.put("name", curso.getNomeCurso());
+            jsonObject.put("id", curso.getIdCurso());
+
             return jsonObject.toString();
         } catch (Exception ex) {
             return "";
@@ -53,12 +55,13 @@ public class Curso {
         ArrayList<Curso> cursos = new ArrayList<>();
 
         try {
-            JSONArray array = new JSONArray(json);
+            JSONObject objetoPrincipal = new JSONObject(json);
+            JSONArray array = objetoPrincipal.getJSONArray("data");
             for (int i = 0; i < array.length(); i++) {
                 Curso curso = new Curso();
                 JSONObject obj = array.getJSONObject(i);
-                curso.setNomeCurso(obj.getString("course"));
-                curso.setIdCurso(obj.getInt("idCourse"));
+                curso.setNomeCurso(obj.getString("name"));
+                curso.setIdCurso(obj.getInt("id"));
                 cursos.add(curso);
             }
 
