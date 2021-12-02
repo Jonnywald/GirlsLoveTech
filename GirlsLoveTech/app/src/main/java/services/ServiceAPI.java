@@ -26,7 +26,7 @@ public class ServiceAPI {
             try {
                 URL url = new URL(reqUrl);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-                conn.setRequestProperty("Authorization","Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZXMiOiJhZG1pbiIsImNyZWF0ZWRBdCI6IjIwMjEtMTEtMTlUMjE6NTc6MTIuMDAwWiIsInVwZGF0ZWRBdCI6IjIwMjEtMTEtMTlUMjE6NTc6MTIuMDAwWiIsImlzQWN0aXZlIjp0cnVlLCJpYXQiOjE2Mzc3MTczMjAsImV4cCI6MTYzODMyMjEyMH0.O7Y2VUipjrza-1ZkXNygf7JHIggH6XHJ-5VczM-o5NI");
+                conn.setRequestProperty("Authorization","Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZXMiOiJhZG1pbiIsImNyZWF0ZWRBdCI6IjIwMjEtMTEtMTlUMjE6NTc6MTIuMDAwWiIsInVwZGF0ZWRBdCI6IjIwMjEtMTEtMTlUMjE6NTc6MTIuMDAwWiIsImlzQWN0aXZlIjp0cnVlLCJpYXQiOjE2Mzg0MDM3MTUsImV4cCI6MTYzOTAwODUxNX0.Ngmcwqa03jjNIkVr3XVFO1efOS-QVz3GIUIl_vaXRkE");
                 conn.setRequestMethod(method);
                 InputStream in = new BufferedInputStream(conn.getInputStream());
                 response = convertStreamToString(in);
